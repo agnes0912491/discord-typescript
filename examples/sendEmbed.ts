@@ -8,8 +8,15 @@ import { Client, Embed } from "../src/index";
   bot.on("hazir", async () => {  
     const channel = await bot.getChannel("channelId")
     const embed1 = new Embed()
-    .belirleAciklama("31")
-    .belirleRenk("#eb4034")
+    .aciklama("31")
+    .renk("#eb4034")
+    .onResim()
+    .arkaResim()
+    .yazar({ isim: null, profil: null })
+    .alan([{
+      isim: null,
+      deger: null
+    }])
     
     const message = await channel.send({
       content: "sdfgsdgdsfg",
