@@ -1,12 +1,11 @@
 import { Client } from "../src/index"; 
 
-(async () => {
-  const bot = new Client();
+const bot = new Client();
 
-  const token = "";
+const token = "";
   
-  bot.on("hazir", async () => {  
-     const channel = await bot.getChannel("channelId")
+bot.on("hazir", async () => {  
+     const channel = bot.channels.get("channelId")
      const message = await channel.send({
        content: "sdfgsdgdsfg",
        tts: false,
@@ -15,6 +14,4 @@ import { Client } from "../src/index";
     }) 
   }); 
 
-  const start = async () => await bot.login(token);
-  await start();
-})();
+bot.login(token);
