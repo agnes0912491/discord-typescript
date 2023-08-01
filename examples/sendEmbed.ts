@@ -1,14 +1,13 @@
 import { Client, Embed } from "../src/index"; 
+ 
+const bot = new Client();
 
-(async () => {
-  const bot = new Client();
-
-  const token = "";
+const token = "";
   
-  bot.on("hazir", async () => {  
-    const channel = await bot.getChannel("channelId")
+bot.on("hazir", async () => {  
+    const channel = bot.channels.get("channelId")
     const embed1 = new Embed()
-    .aciklama("31")
+    .aciklama("deneme")
     .renk("#eb4034")
     .onResim()
     .arkaResim()
@@ -24,8 +23,6 @@ import { Client, Embed } from "../src/index";
       embeds: [embed1],
       components: []
     }) 
-  });
+});
 
-  const start = async () => await bot.login(token);
-  await start();
-})();
+bot.login(token);
